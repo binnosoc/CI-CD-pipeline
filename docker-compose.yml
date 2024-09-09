@@ -1,0 +1,19 @@
+services:
+  postgres:
+    container_name: postgres-sql-ci-cd-pipeline
+    image: postgres
+    environment:
+      POSTGRES_USER: innosoc
+      POSTGRES_PASSWORD: Docker@2024d
+      PGDATA: /var/lib/postgresql/pipeline/data
+      POSTGRES_DB: ci_cd_pipeline
+    volumes:
+      - postgres:/ci_cd_pipeline/data/postgres
+    ports:
+      - "5436:5432"
+    restart: unless-stopped
+
+
+volumes:
+  postgres:
+    driver: local
