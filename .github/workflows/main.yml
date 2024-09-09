@@ -31,7 +31,7 @@ jobs:
           mvn clean
           mvn -B package --file pom.xml
 
-      # Step to create a Docker tag with timestamp
+ 
       - name: Generate Docker Tag
         id: docker_tag
         run: echo "DOCKER_TAG=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
