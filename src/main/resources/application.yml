@@ -1,5 +1,5 @@
 spring:
   application:
     name: cicdpipeline
-  profiles:
-    active: dev
+server:
+  port: 8080
